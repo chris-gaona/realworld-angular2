@@ -4,7 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AuthModule } from "./auth/auth.module";
 import { HomeModule } from "./home/home.module";
-import { SharedModule, FooterComponent, HeaderComponent } from './shared';
+import { SharedModule,
+  FooterComponent,
+  HeaderComponent,
+  ApiService,
+  UserService } from './shared';
 import { RouterModule } from "@angular/router";
 
 // root of the app
@@ -24,7 +28,10 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     HomeModule,
     rootRouting
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
