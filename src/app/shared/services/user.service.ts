@@ -80,4 +80,13 @@ export class UserService {
   getCurrentUser(): User {
     return this.currentUserSubject.value;
   }
+
+  update(user): Observable<User> {
+    return this.apiService.put('/user', {user})
+      .map(data => {
+        // update the currentUser observable
+        this.currentUserSubject.next(data.user);
+        return data.user;
+      });
+  }
 }
