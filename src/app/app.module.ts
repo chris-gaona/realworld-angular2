@@ -12,7 +12,6 @@ import { SharedModule,
   AuthGuardService,
   UserService } from './shared';
 import { RouterModule } from "@angular/router";
-import { SettingsComponent } from './settings/settings.component';
 import {SettingsModule} from "./settings/settings.module";
 
 // root of the app
@@ -27,8 +26,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent,
-    SettingsComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
