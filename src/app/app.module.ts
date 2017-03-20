@@ -8,6 +8,7 @@ import { SharedModule,
   FooterComponent,
   HeaderComponent,
   ApiService,
+  JwtService,
   UserService } from './shared';
 import { RouterModule } from "@angular/router";
 
@@ -30,7 +31,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   ],
   providers: [
     ApiService,
-    UserService
+    UserService,
+    JwtService
   ],
   bootstrap: [AppComponent]
 })
