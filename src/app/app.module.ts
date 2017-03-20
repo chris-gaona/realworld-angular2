@@ -9,6 +9,7 @@ import { SharedModule,
   HeaderComponent,
   ApiService,
   JwtService,
+  AuthGuardService,
   UserService } from './shared';
 import { RouterModule } from "@angular/router";
 
@@ -32,7 +33,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   providers: [
     ApiService,
     UserService,
-    JwtService
+    JwtService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
