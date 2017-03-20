@@ -17,6 +17,8 @@ export class ProfileComponent implements OnInit {
   isUser: boolean;
 
   ngOnInit() {
+    // subscribe to data returned after resolve successfully completes
+    // check out profile.module and then profile-resolver.service
     this.route.data.subscribe((data: {profile: Profile}) => {
       this.profile = data.profile;
     });
