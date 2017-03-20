@@ -1,10 +1,10 @@
 import {ModuleWithProviders, NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 import {AuthComponent} from "./auth.component";
-import {SharedModule} from "../shared/shared.module";
+import {SharedModule} from "../shared";
 import {NoAuthGuardService} from "./no-auth-guard.service";
 
-
+// handle auth child navigation/routes
 const authRouting: ModuleWithProviders = RouterModule.forChild([
   {
     path: 'login',

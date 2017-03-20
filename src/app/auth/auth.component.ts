@@ -50,6 +50,7 @@ export class AuthComponent implements OnInit {
     let credentials = this.authForm.value;
     this.userService.attemptAuth(this.authType, credentials)
       .subscribe(
+        // navigate to home route if successful
         data => this.router.navigateByUrl('/'),
         err => {
           this.errors = err;

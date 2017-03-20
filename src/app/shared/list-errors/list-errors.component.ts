@@ -9,12 +9,16 @@ import {Errors} from "../models";
 export class ListErrorsComponent {
   formattedErrors: Array<string> = [];
 
+  // uses an input property setter to intercept and act upon a value from the parent
   @Input()
   set errors(errorList: Errors) {
     this.formattedErrors = [];
 
     if (errorList.errors) {
+      // iterate through the error object
+      // each key in key/value pair
       for (let field in errorList.errors) {
+        // errors displayed as key and then value
         this.formattedErrors.push(`${field} ${errorList.errors[field]}`);
       }
     }

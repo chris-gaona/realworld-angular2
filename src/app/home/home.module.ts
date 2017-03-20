@@ -1,10 +1,11 @@
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { HomeComponent } from "./home.component";
-import { SharedModule } from "../shared/shared.module";
+import { SharedModule } from "../shared";
 
-// child module
-// home component is base form where to navigate from
+// child module & child routes
+// home component is base from where to navigate from
+// only one route currently for home page
 const homeRouting: ModuleWithProviders = RouterModule.forChild([
   {
     path: '',

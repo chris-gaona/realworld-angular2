@@ -15,7 +15,11 @@ import { RouterModule } from "@angular/router";
 
 // root of the app
 // declares root routing for the application
-const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
+// empty array because there are no routes currently
+// use hash adds the hashbang routing i.e. /#/
+// choosing to store routes in each module so routing can be taken care of on a
+// feature by feature basis...using child routes on other feature modules
+const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
 
 @NgModule({
   declarations: [

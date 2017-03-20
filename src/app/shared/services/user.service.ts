@@ -8,11 +8,19 @@ import {JwtService} from "./jwt.service";
 @Injectable()
 export class UserService {
 
+  // BehaviorSubject represents a value that changes over time. Observers can subscribe to the subject to receive the last (or initial) value and all subsequent notifications.
+  // https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/subjects/behaviorsubject.md
   private currentUserSubject = new BehaviorSubject<User>(new User());
   // converts above to public observable for use throughout the app
   // converting the Subject to an Observable prevents any changes from being made to the User
+  // The Observable object represents a push based collection
+  // https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/observable.md
+  // distinctUntilChanged method makes sure observable ignores users that are same as previous
   public currentUser = this.currentUserSubject.asObservable().distinctUntilChanged();
 
+  // ReplaySubject that can store one value and this value has not been set yet. This value will be set when our UserService authenticates the user
+  // using ReplaySubject so we don't have to set it to an initial value
+  // switch isAuthenticatedSubject to be a ReplaySubject instead of a BehaviorSubject. The reason for this is that we are able to create isAuthenticatedSubject without an initial value since we don't know if the JWT is valid until the server authenticates it. isAuthenticatedSubject is an Oberservable, which means anything using it will wait until it emits either true or false
   private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
   // converts above to public observable for use throughout the app
   // converting the Subject to an Observable prevents any changes from being made to the User
@@ -25,13 +33,12 @@ export class UserService {
   }
 
   // verify jwt in localStorage with server & load user's info
-  // this runs once on application startup
-
+  // this runs once on application startup...check out app.component.ts ngOnInit()
   populate() {
     // if jwt detected, attempt to get & store user's info
 
     if (this.jwtService.getToken()) {
-      //utilize our newly created get() method (params are optional)
+      //utilize get() method (params are optional)
       this.apiService.get('/user')
         .subscribe(
           data => this.setAuth(data.user),

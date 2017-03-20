@@ -1,3 +1,5 @@
+// entry point for our application
+
 import './polyfills.ts';
 
 import { enableProdMode } from '@angular/core';
