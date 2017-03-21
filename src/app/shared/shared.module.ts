@@ -5,7 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ListErrorsComponent } from "./list-errors/list-errors.component";
 import { ShowAuthedDirective } from "./show-authed.directive";
-import {FollowButtonComponent} from "./buttons";
+import {FollowButtonComponent, FavoriteButtonComponent} from "./buttons";
+import {ArticleMetaComponent} from "./article-helpers/article-meta/article-meta.component";
 
 @NgModule({
   imports: [
@@ -16,6 +17,8 @@ import {FollowButtonComponent} from "./buttons";
     RouterModule
   ],
   declarations: [
+    ArticleMetaComponent,
+    FavoriteButtonComponent,
     FollowButtonComponent,
     ListErrorsComponent,
     ShowAuthedDirective
@@ -28,7 +31,9 @@ import {FollowButtonComponent} from "./buttons";
     RouterModule,
     ListErrorsComponent,
     ShowAuthedDirective,
-    FollowButtonComponent
+    FollowButtonComponent,
+    FavoriteButtonComponent,
+    ArticleMetaComponent
   ]
 })
 export class SharedModule {}

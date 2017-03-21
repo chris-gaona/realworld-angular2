@@ -3,6 +3,35 @@
   <div class="banner">
     <div class="container">
       <h1>{{ article.title }}</h1>
+
+      <article-meta [article]="article">
+        <span [hidden]="!canModify">
+          <a class="btn btn-sm btn-outline-secondary"
+             [routerLink]="['/editor', article.slug]">
+            <i class="ion-edit"></i> Edit Article
+          </a>
+
+          <button class="btn btn-sm btn-outline-danger"
+                  [ngClass]="{disabled: isDeleting}"
+                  (click)="deleteArticle()">
+            <i class="ion-trash-a"></i> Delete Article
+          </button>
+        </span>
+
+        <span [hidden]="canModify">
+          <follow-button
+            [profile]="article.author"
+            (onToggle)="onToggleFollowing($event)">
+          </follow-button>
+
+          <favorite-button
+            [article]="article"
+            (onToggle)="onToggleFavorite($event)">
+            {{ article.favorited ? 'Unfavorite' : 'Favorite' }} Article <span class="counter">({{ article.favoritesCount }})</span>
+          </favorite-button>
+        </span>
+
+      </article-meta>
     </div>
   </div>
 
@@ -25,6 +54,35 @@
     <hr />
 
     <div class="article-actions">
+
+      <article-meta [article]="article">
+
+        <span [hidden]="!canModify">
+          <a class="btn btn-sm btn-outline-secondary"
+             [routerLink]="['/editor', article.slug]">
+            <i class="ion-edit"></i> Edit Article
+          </a>
+
+          <button class="btn btn-sm btn-outline-danger"
+                  [ngClass]="{disabled: isDeleting}"
+                  (click)="deleteArticle()">
+            <i class="ion-trash-a"></i> Delete Article
+          </button>
+        </span>
+
+        <span [hidden]="canModify">
+          <follow-button
+            [profile]="article.author"
+            (onToggle)="onToggleFollowing($event)">
+          </follow-button>
+
+          <favorite-button
+            [article]="article"
+            (onToggle)="onToggleFavorite($event)">
+            {{ article.favorited ? 'Unfavorite' : 'Favorite' }} Article <span class="counter">({{ article.favoritesCount }})</span>
+          </favorite-button>
+        </span>
+      </article-meta>
 
     </div>
 
