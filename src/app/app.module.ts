@@ -17,6 +17,7 @@ import { RouterModule } from "@angular/router";
 import {SettingsModule} from "./settings/settings.module";
 import {ProfileModule} from "./profile/profile.module";
 import {EditorModule} from "./editor/editor.module";
+import {ArticleModule} from "./article/article.module";
 
 
 // root of the app
@@ -41,6 +42,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     SettingsModule,
     ProfileModule,
     EditorModule,
+    ArticleModule,
     rootRouting
   ],
   providers: [

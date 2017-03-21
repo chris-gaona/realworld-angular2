@@ -1,0 +1,40 @@
+<div class="article-page">
+
+  <div class="banner">
+    <div class="container">
+      <h1>{{ article.title }}</h1>
+    </div>
+  </div>
+
+  <div class="container page">
+
+    <div class="row article-content">
+      <div class="col-md-12">
+
+        <div [innerHTML]="article.body | markdown"></div>
+
+        <ul class="tag-list">
+          <li *ngFor="let tag of article.tagList"
+              class="tag-default tag-pill tag-outline">
+            {{ tag }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="article-actions">
+
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2">
+
+        <div *showAuthed="false">
+          <a [routerLink]="['/login']">Sign in</a> or <a [routerLink]="['/register']">sign up</a> to add comments on this article.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
