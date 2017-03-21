@@ -30,6 +30,7 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  // @Output decorator from follow-button
   onToggleFollowing(following: boolean) {
     this.profile.following = following;
   }
