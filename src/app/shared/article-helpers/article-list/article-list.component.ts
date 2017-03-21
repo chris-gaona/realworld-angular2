@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ArticleService} from "../../services/article.service";
-import {ArticleListConfig, Article} from "../../models";
+import {Article, ArticleListConfig} from "../../models";
 
 @Component({
   selector: 'article-list',
