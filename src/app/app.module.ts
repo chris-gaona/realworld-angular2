@@ -11,10 +11,12 @@ import { SharedModule,
   JwtService,
   AuthGuardService,
   ProfileService,
+  ArticleService,
   UserService } from './shared';
 import { RouterModule } from "@angular/router";
 import {SettingsModule} from "./settings/settings.module";
 import {ProfileModule} from "./profile/profile.module";
+import {EditorModule} from "./editor/editor.module";
 
 
 // root of the app
@@ -38,6 +40,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     HomeModule,
     SettingsModule,
     ProfileModule,
+    EditorModule,
     rootRouting
   ],
   providers: [
@@ -45,7 +48,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: fal
     UserService,
     JwtService,
     AuthGuardService,
-    ProfileService
+    ProfileService,
+    ArticleService
   ],
   bootstrap: [AppComponent]
 })
