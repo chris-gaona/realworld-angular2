@@ -37,7 +37,7 @@ export class ArticleComponent implements OnInit {
     this.route.data.subscribe((data: {article: Article}) => {
       this.article = data.article;
 
-      // loda the comments on this article
+      // load the comments on this article
       this.populateComments();
     });
 

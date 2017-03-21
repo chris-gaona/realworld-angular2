@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ListErrorsComponent } from "./list-errors/list-errors.component";
 import { ShowAuthedDirective } from "./show-authed.directive";
 import {FollowButtonComponent, FavoriteButtonComponent} from "./buttons";
-import {ArticleMetaComponent} from "./article-helpers/article-meta/article-meta.component";
+import {ArticleMetaComponent, ArticleListComponent, ArticlePreviewComponent} from "./article-helpers";
 
 @NgModule({
   imports: [
@@ -17,7 +17,9 @@ import {ArticleMetaComponent} from "./article-helpers/article-meta/article-meta.
     RouterModule
   ],
   declarations: [
+    ArticleListComponent,
     ArticleMetaComponent,
+    ArticlePreviewComponent,
     FavoriteButtonComponent,
     FollowButtonComponent,
     ListErrorsComponent,
@@ -33,7 +35,8 @@ import {ArticleMetaComponent} from "./article-helpers/article-meta/article-meta.
     ShowAuthedDirective,
     FollowButtonComponent,
     FavoriteButtonComponent,
-    ArticleMetaComponent
+    ArticleMetaComponent,
+    ArticleListComponent
   ]
 })
 export class SharedModule {}

@@ -2,6 +2,7 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { HomeComponent } from "./home.component";
 import { SharedModule } from "../shared";
+import {HomeAuthResolverService} from "../shared";
 
 // child module & child routes
 // home component is base from where to navigate from
@@ -9,7 +10,10 @@ import { SharedModule } from "../shared";
 const homeRouting: ModuleWithProviders = RouterModule.forChild([
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    resolve: {
+      isAuthenticated: HomeAuthResolverService
+    }
   }
 ]);
 
@@ -21,7 +25,9 @@ const homeRouting: ModuleWithProviders = RouterModule.forChild([
   declarations: [
     HomeComponent
   ],
-  providers: []
+  providers: [
+    HomeAuthResolverService
+  ]
 })
 
 export class HomeModule {}

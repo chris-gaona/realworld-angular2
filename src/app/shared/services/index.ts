@@ -8,3 +8,5 @@ export * from './article.service';
 export * from './editable-article-resolver.service';
 export * from './article-resolver.service';
 export * from './comments.service';
+export * from './tags.service';
+export * from './home-auth-resolver.service';
