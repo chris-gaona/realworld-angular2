@@ -22,6 +22,7 @@ export class FollowButtonComponent {
   toggleFollowing() {
     this.isSubmitting = true;
 
+    // subscribe to isAuthenticated to receive a boolean response
     this.userService.isAuthenticated.subscribe(authenticated => {
       // not authenticated? push to login screen
       if (!authenticated) {

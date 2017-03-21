@@ -44,7 +44,7 @@ export class ApiService {
       .map((res: Response) => res.json());
   }
 
-  // handles all GET routes sent to api
+  // handles all GET requests sent to api
   // Angular uses URLSearchParams to easily construct our GET request parameters
   get(path: string, params: URLSearchParams = new URLSearchParams()): Observable<any> {
     return this.http.get(`${environment.api_url}${path}`, { headers: this.setHeaders(), search: params })
@@ -52,13 +52,14 @@ export class ApiService {
       .map((res:Response) => res.json());
   }
 
-  // handles all PUT routes sent to api
+  // handles all PUT requests sent to api
   put(path: string, body: Object = {}): Observable<any> {
     return this.http.put(`${environment.api_url}${path}`, JSON.stringify(body), { headers: this.setHeaders() })
       .catch(this.formatErrors)
       .map((res:Response) => res.json());
   }
 
+  // handles all DELETE requests send to api
   delete(path): Observable<any> {
     return this.http.delete(`${environment.api_url}${path}`, { headers: this.setHeaders() })
       .catch(this.formatErrors);
