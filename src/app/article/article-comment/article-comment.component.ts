@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {UserService} from "../../services/user.service";
-import {User, Comment} from "../../models";
+import {UserService, User, Comment} from "../../shared";
+
 
 @Component({
   selector: 'article-comment',

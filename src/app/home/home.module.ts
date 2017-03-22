@@ -1,7 +1,8 @@
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { HomeComponent } from "./home.component";
-import { SharedModule, HomeAuthResolverService } from "../shared";
+import { SharedModule } from "../shared";
+import {HomeAuthResolverService} from "./resolver/home-auth-resolver.service";
 
 // child module & child routes
 // home component is base from where to navigate from

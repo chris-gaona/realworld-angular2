@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Article} from "../../models/article.model";
+import {Article} from "../../models";
 
 @Component({
   selector: 'article-meta',

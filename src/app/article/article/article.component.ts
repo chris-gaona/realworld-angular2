@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  Article,
-  User,
-  UserService,
-  ArticleService,
-  Comment,
-  CommentsService
-} from "../shared";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormControl} from "@angular/forms";
+import {
+  Article,
+  Comment,
+  User,
+  ArticleService,
+  CommentsService,
+  UserService
+} from "../../shared";
 
 @Component({
   selector: 'app-article',
-  templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  templateUrl: 'article.component.html',
+  styleUrls: ['article.component.css']
 })
 export class ArticleComponent implements OnInit {
 

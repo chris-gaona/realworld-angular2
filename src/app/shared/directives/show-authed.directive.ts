@@ -5,7 +5,7 @@ import {
   ViewContainerRef,
   Input
 } from '@angular/core';
-import {UserService} from "../services/user.service";
+import {UserService} from "../services";
 
 // directive called ShowAuthedDirective that will show or hide an element based on the current user's authentication status
 

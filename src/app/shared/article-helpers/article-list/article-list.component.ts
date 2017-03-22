@@ -37,13 +37,14 @@ export class ArticleListComponent {
       this.query.filters.offset = (this.limit * (this.currentPage - 1));
     }
 
-    console.log('query', this.query);
     this.articleService.query(this.query)
       .subscribe(data => {
-        console.log('data from query', data);
         this.loading = false;
         this.results = data.articles;
 
+        // Array.from() method creates a new Array instance from an array-like or iterable object
+        // Math.ceil() function returns the smallest integer greater than or equal to a given number
+        // using arrow function as map function to manipulate the elements
         // Used from http://www.jstips.co/en/create-range-0...n-easily-using-one-line/
         this.totalPages = Array.from(new Array(Math.ceil(data.articlesCount / this.limit)), (val, index) => index + 1);
       })

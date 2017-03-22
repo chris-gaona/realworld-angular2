@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Profile} from "../../shared/models/profile.model";
-import {ArticleListConfig} from "../../shared/models/article-list-config.model";
+import {Profile, ArticleListConfig} from "../../shared";
 
 @Component({
   selector: 'profile-articles',

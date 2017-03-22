@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {TagsService} from "../shared/services/tags.service";
-import {UserService} from "../shared/services/user.service";
-import {ArticleListConfig} from "../shared/models/article-list-config.model";
+import {TagsService, UserService, ArticleListConfig} from "../shared";
 
 @Component({
   selector: 'home-page',

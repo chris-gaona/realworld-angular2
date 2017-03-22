@@ -18,8 +18,6 @@ export class ArticleService {
       params.set(key, config.filters[key]);
     });
 
-    console.log('config', config);
-
     return this.apiService
       .get('/articles' + ((config.type === 'feed') ? '/feed' : ''), params)
       .map(data => data);

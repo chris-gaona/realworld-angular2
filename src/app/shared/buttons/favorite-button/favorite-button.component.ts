@@ -1,8 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {ArticleService} from "../../services/article.service";
 import {Router} from "@angular/router";
-import {UserService} from "../../services/user.service";
-import {Article} from "../../models/article.model";
+import {UserService, ArticleService} from "../../services";
+import {Article} from "../../models";
 
 @Component({
   selector: 'favorite-button',

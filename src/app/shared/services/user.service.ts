@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, ReplaySubject} from "rxjs";
 import {ApiService} from "./api.service";
 import {Http} from "@angular/http";
-import {User} from "../models/user.model";
+import {User} from "../models";
 import {JwtService} from "./jwt.service";
 
 @Injectable()

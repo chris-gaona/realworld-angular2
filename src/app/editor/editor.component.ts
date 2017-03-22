@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Article} from "../shared/models/article.model";
 import {FormBuilder, FormGroup, FormControl} from "@angular/forms";
-import {ArticleService} from "../shared/services/article.service";
+import {ArticleService, Article} from "../shared";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({

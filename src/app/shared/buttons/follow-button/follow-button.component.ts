@@ -1,8 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {ProfileService} from "../../services/profile.service";
 import {Router} from "@angular/router";
-import {UserService} from "../../services/user.service";
-import {Profile} from "../../models/profile.model";
+import {UserService, ProfileService} from "../../services";
+import {Profile} from "../../models";
 
 @Component({
   selector: 'follow-button',
