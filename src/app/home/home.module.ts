@@ -11,6 +11,7 @@ const homeRouting: ModuleWithProviders = RouterModule.forChild([
   {
     path: '',
     component: HomeComponent,
+    // solves race condition to check if user is logged in before automatically showing global feed
     resolve: {
       isAuthenticated: HomeAuthResolverService
     }
