@@ -37,8 +37,10 @@ export class ArticleListComponent {
       this.query.filters.offset = (this.limit * (this.currentPage - 1));
     }
 
+    console.log('query', this.query);
     this.articleService.query(this.query)
       .subscribe(data => {
+        console.log('data from query', data);
         this.loading = false;
         this.results = data.articles;
 

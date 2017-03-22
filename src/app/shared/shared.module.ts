@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ListErrorsComponent } from "./list-errors/list-errors.component";
-import { ShowAuthedDirective } from "./show-authed.directive";
+import { ShowAuthedDirective } from "./directives/show-authed.directive";
 import {FollowButtonComponent, FavoriteButtonComponent} from "./buttons";
 import {ArticleMetaComponent, ArticleListComponent, ArticlePreviewComponent} from "./article-helpers";
 

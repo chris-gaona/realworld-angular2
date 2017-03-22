@@ -18,6 +18,8 @@ export class ArticleService {
       params.set(key, config.filters[key]);
     });
 
+    console.log('config', config);
+
     return this.apiService
       .get('/articles' + ((config.type === 'feed') ? '/feed' : ''), params)
       .map(data => data);
@@ -29,6 +31,7 @@ export class ArticleService {
       .map(data => data.article);
   }
 
+  // save an article
   save(article): Observable<Article> {
     // if we're updating an existing article
     if (article.slug) {
@@ -42,14 +45,17 @@ export class ArticleService {
     }
   }
 
+  // delete a article
   destroy(slug) {
     return this.apiService.delete('/articles/' + slug);
   }
 
+  // favorite an article
   favorite(slug): Observable<Article> {
     return this.apiService.post('/articles/' + slug + '/favorite');
   }
 
+  // unfavorite an article
   unfavorite(slug): Observable<Article> {
     return this.apiService.delete('/articles/' + slug + '/favorite');
   }

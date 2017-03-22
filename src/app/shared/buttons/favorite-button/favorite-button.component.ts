@@ -22,6 +22,7 @@ export class FavoriteButtonComponent {
   toggleFavorite() {
     this.isSubmitting = true;
 
+    // check if user trying to favorite is authenticated
     this.userService.isAuthenticated
       .subscribe(authenticated => {
         // not authenticated? push to login screen

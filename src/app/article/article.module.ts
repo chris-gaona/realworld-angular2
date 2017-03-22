@@ -1,9 +1,8 @@
 import {ModuleWithProviders, NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 import {ArticleComponent} from "./article.component";
-import {ArticleResolverService, SharedModule} from "../shared";
+import {ArticleResolverService, SharedModule, ArticleCommentComponent} from "../shared";
 import {MarkdownPipe} from "./markdown.pipe";
-import {ArticleCommentComponent} from "./article-comment/article-comment.component";
 
 const articleRouting: ModuleWithProviders = RouterModule.forChild([
   {

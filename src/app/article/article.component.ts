@@ -4,11 +4,11 @@ import {
   User,
   UserService,
   ArticleService,
-  Comment
+  Comment,
+  CommentsService
 } from "../shared";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormControl} from "@angular/forms";
-import {CommentsService} from "../shared/services/comments.service";
 
 @Component({
   selector: 'app-article',
@@ -23,8 +23,8 @@ export class ArticleComponent implements OnInit {
   comments: Comment[];
   commentControl = new FormControl();
   commentFormErrors = {};
-  isSubmitting: boolean;
-  isDeleting: boolean;
+  isSubmitting: boolean = false;
+  isDeleting: boolean = false;
 
   constructor(private route: ActivatedRoute,
               private articleService: ArticleService,
