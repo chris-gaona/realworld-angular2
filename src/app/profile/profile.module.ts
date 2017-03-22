@@ -1,9 +1,10 @@
 import {ModuleWithProviders, NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 import {ProfileComponent} from "./profile/profile.component";
-import {ProfileResolverService, SharedModule} from "../shared";
+import {SharedModule} from "../shared";
 import {ProfileArticlesComponent} from "./profile-articles/profile-articles.component";
 import {ProfileFavoritesComponent} from "./profile-favorites/profile-favorites.component";
+import {ProfileResolverService} from "./resolver/profile-resolver.service";
 
 const profileRouting: ModuleWithProviders = RouterModule.forChild([
   {

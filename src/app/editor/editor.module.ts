@@ -1,7 +1,8 @@
 import {ModuleWithProviders, NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 import {EditorComponent} from "./editor.component";
-import {AuthGuardService, EditableArticleResolverService, SharedModule} from "../shared";
+import {AuthGuardService, SharedModule} from "../shared";
+import {EditableArticleResolverService} from "./resolver/editable-article-resolver.service";
 
 const editorRouting: ModuleWithProviders = RouterModule.forChild([
   {
