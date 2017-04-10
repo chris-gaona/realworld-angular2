@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, ReplaySubject} from "rxjs";
 import {ApiService} from "./api.service";
-import {Http} from "@angular/http";
 import {User} from "../models";
 import {JwtService} from "./jwt.service";
+
+// the whole point of using RxJS is to asynchronously update & share data across your application. This is done by subscribing to the Observable instead of calling getValue synchronously
 
 @Injectable()
 export class UserService {
@@ -16,6 +17,7 @@ export class UserService {
   // The Observable object represents a push based collection
   // https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/observable.md
   // distinctUntilChanged method makes sure observable ignores users that are same as previous
+  // to create an Observable from a Subject, invoke .asObservable on any Subject
   public currentUser = this.currentUserSubject.asObservable().distinctUntilChanged();
 
   // ReplaySubject that can store one value and this value has not been set yet. This value will be set when our UserService authenticates the user
@@ -27,7 +29,6 @@ export class UserService {
   public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 
   constructor(private apiService: ApiService,
-              private http: Http,
               private jwtService: JwtService) {
 
   }
@@ -54,6 +55,7 @@ export class UserService {
     // save jwt sent from server in localStorage
     this.jwtService.saveToken(user.token);
     // set current user data into observable
+    // to change the value of an existing BehaviorSubject, call the next method with a new value
     this.currentUserSubject.next(user);
     // set isAuthenticated to true
     this.isAuthenticatedSubject.next(true);
@@ -63,6 +65,7 @@ export class UserService {
     // remove jwt from localStorage
     this.jwtService.destroyToken();
     // set current user to an empty object
+    // to change the value of an existing BehaviorSubject, call the next method with a new value
     this.currentUserSubject.next(new User());
     // set auth status to false
     this.isAuthenticatedSubject.next(false);
